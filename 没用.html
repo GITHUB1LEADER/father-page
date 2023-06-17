@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘的测试</title><base target="_blank" />
+<link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/html5/43/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/html5/43/css/hovertree.css">
+
+<style>
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modal img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+	@keyframes modal-scale {
+		from {
+		  transform: scale(0);
+		}
+		to {
+		  transform: scale(1);
+		}
+	  }
+  
+	  #modal {
+		/* 添加动画样式 */
+		animation: modal-scale 1s ease;
+	  }
+  
+	  .modal-show {
+		animation: modal-scale 1s ease;
+	  }
+  
+	  .modal-show img {
+		max-width: 800px;
+		max-height: 600px;
+	  }
+
+  </style>
+
+</head>
+<body>
+	
+<div class="hovertree"></div>
+
+<audio id="myAudio">
+   <source src="蒲公英的约定-周杰伦.mp3" type="audio/mpeg">
+ </audio>
+
+
+ <script>
+   var audio = document.getElementById("myAudio");
+   setTimeout(function() {
+     audio.play();
+   }, 5000);
+ </script>
+ 
+ <div id="modal">
+    <img src="父亲节2.gif" alt="弹窗图片">
+    <span class="close">&times;</span>
+  </div>
+
+  <script>
+    setTimeout(function() {
+      var modal = document.getElementById("modal");
+      modal.style.display = "flex";
+      modal.classList.add("modal-show");
+    }, 8000);
+
+    document.querySelector('.close').addEventListener('click', function() {
+      document.getElementById("modal").style.display = "none";
+    });
+  </script>
+ 
+  <script>
+	setTimeout(function(){
+		// 创建 audio 元素
+		var audio = document.createElement('audio');
+		audio.src = '蒲公英的约定-周杰伦.mp3';
+		audio.controls = true;
+		// 添加到文档底部
+		document.body.appendChild(audio);
+		// 滚动到底部
+		window.scrollTo(0,document.body.scrollHeight);
+	  }, 10000); // 延迟10秒加载
+	  
+  </script>
+
+<script type="text/javascript" src="http://down.hovertree.com/jquery/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://hovertree.com/texiao/html5/43/js/jquery.fireworks.js"></script>
+<script type="text/javascript">
+   var fx = $('.hovertree').fireworks({
+      sound: true, // sound effect
+      opacity: 0.9, 
+      width: '100%', 
+      height: '100%'
+   });
+   setTimeout(function() {
+      fx.fireworks("destroy");
+   }, 5000); // 5秒后停止烟花特效
+
+
+</script>
+</body>
+
+</html>
